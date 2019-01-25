@@ -114,7 +114,7 @@ struct AVR_MIDI_packet_parser: public Iface_MIDI_packet_parser<AVR_MIDI_packet_p
 
 			const uint8_t ch = (READ_PIN( SW3 ) ? (1<<2) : 0)
 			                 + (READ_PIN( SW2 ) ? (1<<1) : 0)
-			                 + (READ_PIN( SW1 ) ?  1     : 0);
+			                 + (READ_PIN( SW1 ) ?  1     : 0) + 8;
 
 			if(((buffer[0] & 0x80)                  // Regular messages
 			 || (buffer[0] == 0 && running_status)) // Running status (only data[2])
